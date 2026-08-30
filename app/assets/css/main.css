@@ -1,0 +1,35 @@
+@import "tailwindcss";
+@import "@nuxt/ui";
+
+@theme {
+  --font-sans: "Hanken Grotesk", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Fraunces", Georgia, serif;
+
+  --ui-container: 72rem;
+}
+
+:root {
+  --ui-bg: #14100b;         
+  --ui-bg-elevated: #191410; 
+  --ui-bg-accented: #201a13; 
+  --ui-bg-inverted: #f4ede3;  
+  --ui-text: #f4ede3;           
+  --ui-text-highlighted: #fffaf2;
+  --ui-text-muted: #a99a86;    
+  --ui-text-dimmed: #857763;
+  --ui-text-inverted: #241708;  
+  --ui-border: rgba(244, 237, 228, 0.1);        
+  --ui-border-accented: rgba(244, 237, 228, 0.18);
+  --ui-border-inverted: #241708;
+  --ui-primary: #d9a05b;
+}
+
+::selection {
+  background: #d9a05b;
+  color: #241708;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+}
