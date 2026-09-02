@@ -1,10 +1,23 @@
 // @ts-check
 import { globalIgnores } from 'eslint/config'
-import withNuxt from './.nuxt/eslint.config.mjs'
+import eslintConfig from './.nuxt/eslint.config.mjs'
 import pluginVitest from '@vitest/eslint-plugin'
 import pluginOxlint from 'eslint-plugin-oxlint'
 
-export default withNuxt(
+export default eslintConfig(
+        {
+        rules: {
+            "vue/html-self-closing": [
+                "error",
+                {
+                    html: {
+                        void: "always",
+                    },
+                },
+            ],
+        },
+    },
+
   globalIgnores(['**/coverage/**']),
 
   {
