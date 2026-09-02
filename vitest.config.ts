@@ -28,6 +28,7 @@ export default defineConfig({
                             },
                         },
                     },
+                    setupFiles: ["test/nuxt/setup.ts"],
                 },
             }),
         ],
