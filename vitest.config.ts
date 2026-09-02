@@ -21,6 +21,7 @@ export default defineConfig({
                     testTimeout: 9_0000,
                     environmentOptions: {
                         nuxt: {
+                            domEnvironment: "jsdom",
                             mock: {
                                 intersectionObserver: true,
                                 indexedDb: true,
