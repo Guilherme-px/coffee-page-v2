@@ -1,3 +1,4 @@
+import type { AboutMedia, AboutStat } from "./types/about";
 import type { HeroSlide } from "./types/hero";
 import type { NavigationLink } from "./types/navigation";
 
@@ -28,6 +29,21 @@ export default defineAppConfig({
                     alt: "The shop in the morning",
                 },
             ] satisfies HeroSlide[],
+        },
+
+        about: {
+            stats: [
+                { value: "12", suffix: "+", label: "Years brewing" },
+                { value: "40", suffix: "+", label: "Coffee recipes" },
+                { value: "500", suffix: "+", label: "Regulars by name" },
+            ] satisfies AboutStat[],
+            media: {
+                image: "/imgs/about-1.jpg",
+                alt: "Latte art between plants at the shop",
+                secondaryImage: "/imgs/about-2.jpg",
+                secondaryAlt: "The café terrace",
+                caption: "The shop — rue Notre-Dame Est",
+            } satisfies AboutMedia,
         },
     },
 
