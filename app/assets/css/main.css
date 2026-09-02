@@ -33,3 +33,18 @@ html {
   scroll-behavior: smooth;
   scroll-padding-top: 5rem;
 }
+
+@theme {
+    @keyframes scroll-cue {
+        0% {
+            transform: translateX(-100%);
+        }
+        60%,
+        100% {
+            transform: translateX(100%);
+        }
+    }
+
+    --animate-scroll-cue: scroll-cue 2.4s ease-in-out infinite;
+}
+
