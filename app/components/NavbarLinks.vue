@@ -4,7 +4,7 @@
             <li v-for="link in links" :key="link.to">
                 <NuxtLink
                     :to="link.to"
-                    class="group relative block py-1 text-xs font-semibold uppercase tracking-[0.15em] transition-colors"
+                    class="group relative block py-1 text-sm font-semibold uppercase tracking-[0.15em] transition-colors"
                     :class="
                         isActive(link)
                             ? 'text-default'

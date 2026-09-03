@@ -10,7 +10,7 @@
                 "
             >
                 <p
-                    class="mb-5 flex items-center justify-center gap-4 text-xs font-semibold uppercase tracking-[0.26em] text-primary"
+                    class="mb-5 flex items-center justify-center gap-4 text-sm font-semibold uppercase tracking-[0.26em] text-primary"
                 >
                     <span class="h-px w-11 bg-primary" />
                     Find us

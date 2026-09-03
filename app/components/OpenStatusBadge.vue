@@ -1,7 +1,7 @@
 <template>
     <span
         role="status"
-        class="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.15em] text-muted"
+        class="inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-[0.15em] text-muted"
     >
         <span
             class="size-1.5 rounded-full"
