@@ -44,3 +44,19 @@ it("refreshes the clock on interval and cleans up on unmount", async () => {
     wrapper.unmount();
     vi.useRealTimers();
 });
+
+it("uses the weekend schedule", async () => {
+    const saturdayEvening = new Date("2026-01-10T23:30:00Z");
+
+    const wrapper = await mountSuspended({
+        setup() {
+            const { isOpen, label } = useOpenStatus(() => saturdayEvening);
+
+            return { isOpen, label };
+        },
+
+        template: "<p>{{ label }} {{ isOpen }}</p>",
+    });
+
+    expect(wrapper.text()).toBe("18:30 false");
+});
