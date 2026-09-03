@@ -1,9 +1,9 @@
 <template>
     <div>
         <p
-            class="mb-8 flex items-center gap-4 text-sm font-semibold uppercase tracking-[0.26em] text-primary"
+            class="mb-6 text-xs font-semibold uppercase tracking-[0.2em] text-primary md:mb-8 md:flex md:items-center md:gap-4 md:text-sm md:tracking-[0.26em]"
         >
-            <span class="h-px w-11 bg-primary" />
+            <span class="hidden h-px w-11 bg-primary md:block" />
             Specialty coffee — Montréal — est. 2013
         </p>
 
