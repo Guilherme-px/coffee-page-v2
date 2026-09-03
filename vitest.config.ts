@@ -1,4 +1,5 @@
-import { defineConfig } from "vitest/config";
+import { fileURLToPath } from "node:url";
+import { defineConfig, coverageConfigDefaults } from "vitest/config";
 import { defineVitestProject } from "@nuxt/test-utils/config";
 
 export default defineConfig({
@@ -9,6 +10,11 @@ export default defineConfig({
                     name: "unit",
                     include: ["test/unit/**/*.{test,spec}.ts"],
                     environment: "node",
+                },
+                resolve: {
+                    alias: {
+                        "~": fileURLToPath(new URL("./app", import.meta.url)),
+                    },
                 },
             },
 
@@ -34,7 +40,20 @@ export default defineConfig({
         ],
         coverage: {
             provider: "v8",
-            include: ["app/composables/**", "app/components/**"],
+            reporter: ["text", "json", "html"],
+            reportsDirectory: "./coverage",
+            exclude: [
+                ...coverageConfigDefaults.exclude,
+                "nuxt.config.ts",
+                "**/.nuxt/**",
+                "**/test/**",
+                "**/scripts/**",
+            ],
+            include: [
+                "app/components/**",
+                "app/composables/**",
+                "app/utils/**",
+            ],
             thresholds: {
                 lines: 100,
                 functions: 100,
