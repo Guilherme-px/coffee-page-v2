@@ -2,6 +2,7 @@ import type { AboutMedia, AboutStat } from "./types/about";
 import type { HeroSlide } from "./types/hero";
 import type { MenuItem } from "./types/menu";
 import type { NavigationLink } from "./types/navigation";
+import type { VisitData } from "./types/visit";
 
 export default defineAppConfig({
     aube: {
@@ -101,6 +102,44 @@ export default defineAppConfig({
                 },
             ] satisfies MenuItem[],
         },
+
+        visit: {
+            schedule: [
+                {
+                    days: [1, 2, 3, 4, 5],
+                    label: "Monday — Friday",
+                    open: "7:00",
+                    close: "19:00",
+                },
+                { days: [6], label: "Saturday", open: "8:00", close: "18:00" },
+                { days: [0], label: "Sunday", open: "8:00", close: "18:00" },
+            ],
+            contacts: [
+                {
+                    label: "Address",
+                    value: "rue Notre-Dame Est, Montréal",
+                    href: "https://maps.google.com/?q=rue+Notre-Dame+Est+Montréal",
+                    icon: "i-lucide-map-pin",
+                },
+                {
+                    label: "E-mail",
+                    value: "hello@aube.coffee",
+                    href: "mailto:hello@aube.coffee",
+                    icon: "i-lucide-mail",
+                },
+                {
+                    label: "Phone",
+                    value: "99 9999-9999",
+                    href: "tel:+19999999999",
+                    icon: "i-lucide-phone",
+                },
+            ],
+            socials: [
+                { label: "Facebook", href: "#", icon: "i-lucide-facebook" },
+                { label: "Twitter", href: "#", icon: "i-lucide-twitter" },
+                { label: "Instagram", href: "#", icon: "i-lucide-instagram" },
+            ],
+        } satisfies VisitData,
     },
 
     ui: {
