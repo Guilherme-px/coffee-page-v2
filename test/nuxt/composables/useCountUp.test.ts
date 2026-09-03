@@ -2,6 +2,7 @@ import { mountSuspended } from "@nuxt/test-utils/runtime";
 import { nextTick } from "vue";
 import { afterEach, expect, it, vi } from "vitest";
 import { useCountUp } from "../../../app/composables/useCountUp";
+import CountUpNumber from "~/components/CountUpNumber.vue";
 
 interface FakeObserver {
     callback: (entries: { isIntersecting: boolean }[]) => void;
@@ -153,4 +154,23 @@ it("does nothing when the target element is missing", async () => {
 
     expect(observers.length).toBe(0);
     expect(wrapper.text()).toBe("0");
+});
+
+it("counts up once visible and disconnects the observer", async () => {
+    stubApis();
+
+    const wrapper = await mountSuspended(CountUpNumber, {
+        props: { value: 500, duration: 1000 },
+    });
+
+    observers[0]!.callback([{ isIntersecting: true }]);
+
+    now = 500;
+    await flushRaf();
+    expect(wrapper.text()).toBe("438");
+
+    now = 1000;
+    await flushRaf();
+    expect(wrapper.text()).toBe("500");
+    expect(observers[0]!.disconnected).toBe(true);
 });
