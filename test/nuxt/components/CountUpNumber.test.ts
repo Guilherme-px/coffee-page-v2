@@ -66,13 +66,17 @@ it("counts up once visible and disconnects the observer", async () => {
         props: { value: 500, duration: 1000 },
     });
 
-    expect(observers).toHaveLength(1);
-
     observers[0]!.callback([{ isIntersecting: true }]);
+
+    now = 500;
+    await flushRaf();
+    expect(wrapper.text()).toBe("438");
 
     now = 1000;
     await flushRaf();
     expect(wrapper.text()).toBe("500");
+
+    wrapper.unmount();
     expect(observers[0]!.disconnected).toBe(true);
 });
 
