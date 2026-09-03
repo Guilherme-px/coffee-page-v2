@@ -35,7 +35,7 @@
                     <span
                         class="font-serif text-lg font-semibold text-primary md:text-xl"
                     >
-                        {{ formatPrice(item.price) }}
+                        {{ formattedPrice }}
                     </span>
                 </div>
 
@@ -48,11 +48,13 @@
 </template>
 
 <script setup lang="ts">
-import type { MenuItem } from "~/types/menu";
+import type { MenuItem } from "@/types/menu";
 
 const props = defineProps<{ item: MenuItem; index: number }>();
 
 const { visible } = useReveal();
 
 const delay = computed(() => `${(props.index % 3) * 120}ms`);
+
+const formattedPrice = computed(() => formatPrice(props.item.price));
 </script>
