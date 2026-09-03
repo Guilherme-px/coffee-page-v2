@@ -36,16 +36,17 @@ it("marks the link matching the current hash as active", async () => {
     const wrapper = await mountSuspended(NavbarLinks, { props: { links } });
 
     const about = wrapper.findAll("a")[1]!;
-    expect(about.classes()).toContain("text-default");
+    expect(about.classes()).toContain("text-muted");
     expect(about.find("span").classes()).toContain("scale-x-100");
 });
 
-it("leaves non-matching links muted without underline", async () => {
+it("leaves non-matching links in full contrast without underline", async () => {
     useRouteMock.mockReturnValue({ hash: "#about" });
 
     const wrapper = await mountSuspended(NavbarLinks, { props: { links } });
 
     const home = wrapper.findAll("a")[0]!;
-    expect(home.classes()).toContain("text-muted");
+    expect(home.classes()).toContain("text-default");
+    expect(home.classes()).not.toContain("text-muted");
     expect(home.find("span").classes()).toContain("scale-x-0");
 });
