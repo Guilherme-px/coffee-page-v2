@@ -7,8 +7,8 @@
                     class="group relative block py-1 text-sm font-semibold uppercase tracking-[0.15em] transition-colors"
                     :class="
                         isActive(link)
-                            ? 'text-default'
-                            : 'text-muted hover:text-default'
+                            ? 'text-muted'
+                            : 'text-default hover:text-muted'
                     "
                 >
                     {{ link.label }}
