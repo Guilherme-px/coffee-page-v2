@@ -26,9 +26,6 @@ function run(from: number, to: number) {
 }
 
 onMounted(() => {
-    const el = root.value;
-    if (!el) return;
-
     const observer = new IntersectionObserver(
         (entries) => {
             if (entries.some((entry) => entry.isIntersecting)) {
@@ -39,7 +36,7 @@ onMounted(() => {
         { threshold: 0.5 },
     );
 
-    observer.observe(el);
+    observer.observe(root.value!);
 
     onScopeDispose(() => observer.disconnect());
 });
