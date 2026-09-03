@@ -2,7 +2,7 @@
     <main>
         <HeroSection />
         <AboutSection />
-        <section id="menu" class="min-h-svh" />
+        <MenuSection />
         <section id="visit" class="min-h-svh" />
     </main>
 </template>
