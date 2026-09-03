@@ -1,16 +1,3 @@
-<script setup lang="ts">
-import type { NavigationLink } from "~/types/navigation";
-
-defineProps<{ links: NavigationLink[] }>();
-
-const open = ref(false);
-const route = useRoute();
-
-watch(
-    () => route.fullPath,
-    () => (open.value = false),
-);
-</script>
 
 <template>
     <UDrawer
@@ -77,7 +64,7 @@ watch(
                 </nav>
 
                 <div
-                    class="space-y-1 border-t border-default px-5 py-4 text-sm text-muted"
+                    class="space-y-1 border-t border-default px-5 py-4 text-sm text-default"
                 >
                     <OpenStatusBadge class="mt-3" />
                 </div>
@@ -85,3 +72,17 @@ watch(
         </template>
     </UDrawer>
 </template>
+
+    <script setup lang="ts">
+    import type { NavigationLink } from "~/types/navigation";
+    
+    defineProps<{ links: NavigationLink[] }>();
+    
+    const open = ref(false);
+    const route = useRoute();
+    
+    watch(
+        () => route.fullPath,
+        () => (open.value = false),
+    );
+    </script>
