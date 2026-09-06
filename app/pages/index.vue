@@ -27,12 +27,19 @@ const openingHours = visit.schedule.map((row) => ({
     closes: row.close,
 }));
 
+const siteUrl = "https://aube-coffee.vercel.app";
+
 useSchemaOrg([
     defineWebSite({ name: "Café Aube" }),
     defineLocalBusiness({
         name: "Café Aube",
         image: "/imgs/og-cover.png",
-        ogImage: "https://aube-coffee.vercel.app/imgs/hero-1.jpg",
+        ogType: "website",
+        ogUrl: siteUrl || undefined,
+        ogImage: siteUrl ? `${siteUrl}/og-cover` : "/og-cover",
+        twitterCard: "summary_large_image",
+        twitterTitle: "Café Aube",
+        twitterImage: siteUrl ? `${siteUrl}/og-cover` : "/og-cover",
         address: {
             streetAddress: "4527 Rue Notre-Dame Est",
             addressLocality: "Montréal",
