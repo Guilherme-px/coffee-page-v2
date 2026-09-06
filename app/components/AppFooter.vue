@@ -10,7 +10,7 @@
             <p class="text-sm text-muted">
                 developed by
                 <a
-                    href="https://github.com/seu-usuario"
+                    href="https://github.com/Guilherme-px"
                     target="_blank"
                     rel="noopener"
                     class="font-medium text-primary transition-colors hover:text-highlighted"
