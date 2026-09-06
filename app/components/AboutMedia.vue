@@ -1,5 +1,13 @@
 <template>
-    <figure>
+    <figure
+        ref="root"
+        class="motion-safe:transition-all motion-safe:duration-700 motion-safe:ease-out"
+        :class="
+            visible
+                ? 'motion-safe:translate-y-0 motion-safe:opacity-100'
+                : 'motion-safe:translate-y-6 motion-safe:opacity-0'
+        "
+    >
         <div class="relative pb-16">
             <NuxtImg
                 :src="media.image"
@@ -26,4 +34,6 @@
 import type { AboutMedia } from "@/types/about";
 
 defineProps<{ media: AboutMedia }>();
+
+const { visible } = useReveal();
 </script>

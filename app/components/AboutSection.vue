@@ -4,7 +4,17 @@
             class="flex flex-col gap-14 lg:grid lg:grid-cols-[1.02fr_0.98fr] lg:items-center lg:gap-20"
         >
             <AboutMedia :media="about.media" />
-            <div>
+
+            <div
+                ref="root"
+                class="motion-safe:transition-all motion-safe:duration-700 motion-safe:ease-out"
+                :class="
+                    visible
+                        ? 'motion-safe:translate-y-0 motion-safe:opacity-100'
+                        : 'motion-safe:translate-y-6 motion-safe:opacity-0'
+                "
+                :style="visible ? { transitionDelay: '150ms' } : undefined"
+            >
                 <p
                     class="mb-5 flex items-center gap-4 text-sm font-semibold uppercase tracking-[0.26em] text-primary"
                 >
@@ -46,4 +56,5 @@
 
 <script setup lang="ts">
 const { about } = useAppConfig().aube;
+const { visible } = useReveal();
 </script>
