@@ -3,8 +3,27 @@ export default defineNuxtConfig({
     devtools: { enabled: false },
     app: {
         head: {
-            title: "Café Aube — Brûlerie · Montréal",
+            htmlAttrs: { lang: "en" },
             link: [
+                { rel: "icon", type: "image/x-icon", href: "/favicon.ico" },
+                {
+                    rel: "icon",
+                    type: "image/png",
+                    href: "/favicon-32x32.png",
+                    sizes: "32x32",
+                },
+                {
+                    rel: "icon",
+                    type: "image/png",
+                    href: "/favicon-16x16.png",
+                    sizes: "16x16",
+                },
+                {
+                    rel: "apple-touch-icon",
+                    href: "/apple-touch-icon.png",
+                    sizes: "180x180",
+                },
+                { rel: "manifest", href: "/site.webmanifest" },
                 { rel: "preconnect", href: "https://fonts.googleapis.com" },
                 {
                     rel: "preconnect",
@@ -25,6 +44,7 @@ export default defineNuxtConfig({
     css: ["~/assets/css/main.css"],
     modules: [
         "@nuxt/ui",
+        "@nuxtjs/seo",
         "@nuxt/image",
         "@nuxt/a11y",
         "@nuxt/eslint",
@@ -34,5 +54,15 @@ export default defineNuxtConfig({
         config: {
             stylistic: false,
         },
+    },
+    site: {
+        url: "https://aube-coffee.vercel.app",
+        name: "Café Aube",
+        description:
+            "Specialty coffee in Montréal's East End since 2013. Small-batch roasts, honest prices, a room that smells like fresh roast.",
+        defaultLocale: "en",
+    },
+    ogImage: {
+        enabled: true,
     },
 });

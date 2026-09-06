@@ -24,6 +24,7 @@
         "@nuxt/image": "2.1.0",
         "@nuxt/test-utils": "^4.2.0",
         "@nuxt/ui": "4.11.0",
+        "@takumi-rs/core": "^2.13.7",
         "@tiptap/core": "^3",
         "@tiptap/extension-bubble-menu": "^3",
         "@tiptap/extension-code": "^3",
@@ -46,6 +47,7 @@
         "vue-router": "^5.2.0"
     },
     "devDependencies": {
+        "@nuxtjs/seo": "^5.3.14",
         "@vitest/coverage-v8": "^4.1.11",
         "@vitest/eslint-plugin": "^1.6.27",
         "@vue/test-utils": "^2.5.0",
