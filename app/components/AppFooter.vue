@@ -4,7 +4,7 @@
             class="flex flex-col items-center gap-2 py-8 text-center md:flex-row md:justify-between md:gap-4 md:py-10 md:text-left"
         >
             <p class="text-sm text-muted">
-                © 2021 — {{ currentYear }} Kaffa Coffee House
+                © 2021 — {{ currentYear }} aube Coffee House
             </p>
 
             <p class="text-sm text-muted">
@@ -19,9 +19,7 @@
                 </a>
             </p>
 
-            <p class="text-sm text-muted">
-                est. 2013 · Montréal
-            </p>
+            <p class="text-sm text-muted">est. 2013 · Montréal</p>
         </UContainer>
     </footer>
 </template>
