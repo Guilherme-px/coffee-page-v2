@@ -36,10 +36,14 @@ useSchemaOrg([
         image: "/imgs/og-cover.png",
         ogType: "website",
         ogUrl: siteUrl || undefined,
-        ogImage: siteUrl ? `${siteUrl}/imgs/og-cover` : "/imgs/og-cover",
+        ogImage: siteUrl
+            ? `${siteUrl}/imgs/og-cover.png`
+            : "/imgs/og-cover.png",
         twitterCard: "summary_large_image",
         twitterTitle: "Café Aube",
-        twitterImage: siteUrl ? `${siteUrl}/imgs/og-cover` : "/imgs/og-cover",
+        twitterImage: siteUrl
+            ? `${siteUrl}/imgs/og-cover.png`
+            : "/imgs/og-cover.png",
         address: {
             streetAddress: "4527 Rue Notre-Dame Est",
             addressLocality: "Montréal",
