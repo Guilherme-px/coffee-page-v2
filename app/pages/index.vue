@@ -10,6 +10,25 @@
 <script setup lang="ts">
 const { visit } = useAppConfig().aube;
 
+const SITE_URL = "https://aube-coffee.vercel.app";
+
+useSeoMeta({
+    title: "Café Aube — Specialty Coffee · Montréal",
+    description:
+        "Small-batch roasts, honest prices, and a room that always smells like fresh roast. Rue Notre-Dame Est, Montréal — since 2013.",
+    ogTitle: "Café Aube — Specialty Coffee · Montréal",
+    ogDescription:
+        "Great days start with a perfect cup. Specialty coffee in Montréal's East End since 2013.",
+    ogImage: `${SITE_URL}/imgs/og-cover.png`,
+    ogUrl: SITE_URL,
+    ogType: "website",
+    ogLocale: "en_CA",
+    twitterCard: "summary_large_image",
+    twitterTitle: "Café Aube",
+    twitterDescription: "Specialty coffee in Montréal's East End since 2013.",
+    twitterImage: `${SITE_URL}/imgs/og-cover.png`,
+});
+
 const DAY_NAMES = [
     "Sunday",
     "Monday",
@@ -27,23 +46,11 @@ const openingHours = visit.schedule.map((row) => ({
     closes: row.close,
 }));
 
-const siteUrl = "https://aube-coffee.vercel.app";
-
 useSchemaOrg([
     defineWebSite({ name: "Café Aube" }),
     defineLocalBusiness({
         name: "Café Aube",
-        image: "/imgs/og-cover.png",
-        ogType: "website",
-        ogUrl: siteUrl || undefined,
-        ogImage: siteUrl
-            ? `${siteUrl}/imgs/og-cover.png`
-            : "/imgs/og-cover.png",
-        twitterCard: "summary_large_image",
-        twitterTitle: "Café Aube",
-        twitterImage: siteUrl
-            ? `${siteUrl}/imgs/og-cover.png`
-            : "/imgs/og-cover.png",
+        image: `${SITE_URL}/imgs/og-cover.png`,
         address: {
             streetAddress: "4527 Rue Notre-Dame Est",
             addressLocality: "Montréal",
